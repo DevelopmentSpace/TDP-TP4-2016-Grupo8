@@ -11,7 +11,7 @@ namespace Ej1
 
         public void Ejecutar()
         {
-            ErrorPuntualException e = new ErrorPuntualException("Mensaje ErrorPuntual", DateTime.Now);
+            ErrorPuntualException e = new ErrorPuntualException("ErrorPuntual", DateTime.Now);
             throw e;
         }
     }

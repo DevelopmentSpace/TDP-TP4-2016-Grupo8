@@ -23,8 +23,8 @@ namespace Ej1
             }
             catch (ErrorPuntualException e)
             {
-                CapaAplicacionException exp = new CapaAplicacionException("Error en capa de aplicacion");
-                exp.Source = "ErrorPuntualException";
+                CapaAplicacionException exp = new CapaAplicacionException("ErrorPersistencia",e);
+                
                 exp.Data.Add("fecha", e.Data["fecha"]); 
                 throw exp;
             }

@@ -9,7 +9,7 @@ namespace Ej1
     class CapaAplicacionException : ApplicationException
     {
 
-        public CapaAplicacionException(string pMensaje):base(pMensaje)
+        public CapaAplicacionException(string pMensaje, Exception pInnerExeption):base(pMensaje,pInnerExeption)
         {
         }
 

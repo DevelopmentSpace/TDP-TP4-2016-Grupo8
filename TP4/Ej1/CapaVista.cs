@@ -30,8 +30,8 @@ namespace Ej1
                 Console.WriteLine("Mensaje: ");
                 Console.WriteLine(" " + e.Message);
                 Console.WriteLine();
-                Console.WriteLine("Fuente: ");
-                Console.WriteLine(" " + e.Source);
+                Console.WriteLine("MensajeFuente: ");
+                Console.WriteLine(" " + e.InnerException.Message);
                 Console.WriteLine();
                 Console.WriteLine("CallStack: ");
                 Console.WriteLine(" " + e.StackTrace);
