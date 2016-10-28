@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EJ5
 {
-    interface IRepositorioUsuarios
+    public interface IRepositorioUsuarios
     {
         void Agregar(Usuario pUsuario);
         void Actualizar(Usuario pUsuario);
