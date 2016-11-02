@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EJ5-test", "EJ5-test\EJ5-te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ej6", "Ej6\Ej6.csproj", "{4144160F-4E24-44E9-86C6-EE5F34CFF7AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EJ6-Prueba", "EJ6-Prueba\EJ6-Prueba.csproj", "{0B4F5E5F-8455-423F-894B-23DB56883638}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{4144160F-4E24-44E9-86C6-EE5F34CFF7AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4144160F-4E24-44E9-86C6-EE5F34CFF7AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4144160F-4E24-44E9-86C6-EE5F34CFF7AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B4F5E5F-8455-423F-894B-23DB56883638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B4F5E5F-8455-423F-894B-23DB56883638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B4F5E5F-8455-423F-894B-23DB56883638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B4F5E5F-8455-423F-894B-23DB56883638}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

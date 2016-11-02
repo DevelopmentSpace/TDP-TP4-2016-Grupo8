@@ -17,7 +17,8 @@ namespace EJ6
 
         public void Actualizar(Usuario pUsuario)
         {
-            iUsuarios.Insert(iUsuarios.IndexOf(pUsuario), pUsuario);
+            iUsuarios.Remove(pUsuario);
+            iUsuarios.Add(pUsuario);
         }
 
         public void Eliminar(string pCodigo)
@@ -41,8 +42,7 @@ namespace EJ6
 
         public IList<Usuario> ObtenerOrdenadosPor(IComparer<Usuario> pComparador)
         {
-            iUsuarios.OrderBy( unUsuario => unUsuario ,pComparador);
-            return iUsuarios;
+            return iUsuarios.OrderBy( unUsuario => unUsuario ,pComparador).ToList();
         }
     }
 
