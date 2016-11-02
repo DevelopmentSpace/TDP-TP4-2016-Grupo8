@@ -17,30 +17,32 @@ namespace EJ6
 
         public void Actualizar(Usuario pUsuario)
         {
-            
-            
+            iUsuarios.Insert(iUsuarios.IndexOf(pUsuario), pUsuario);
         }
 
         public void Eliminar(string pCodigo)
         {
-            iUsuarios.Remove(pCodigo);
+            Usuario unUsuario = new Usuario();
+            unUsuario.Codigo = pCodigo;
+            iUsuarios.Remove(unUsuario);
         }
 
         public IList<Usuario> ObtenerTodos()
         {
-            return iUsuarios.Values.ToList();
+            return iUsuarios;
         }
 
         public Usuario ObtenerPorCodigo(string pCodigo)
         {
-            return iUsuarios[pCodigo];
+            Usuario unUsuario = new Usuario();
+            unUsuario.Codigo = pCodigo;
+            return iUsuarios.ElementAt(iUsuarios.IndexOf(unUsuario));
         }
 
         public IList<Usuario> ObtenerOrdenadosPor(IComparer<Usuario> pComparador)
         {
-            List<Usuario> lista = iUsuarios.Values.ToList();
-            lista.Sort(pComparador);
-            return lista;
+            iUsuarios.OrderBy( unUsuario => unUsuario ,pComparador);
+            return iUsuarios;
         }
     }
 

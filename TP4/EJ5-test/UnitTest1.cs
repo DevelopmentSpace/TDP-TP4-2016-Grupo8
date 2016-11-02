@@ -147,7 +147,7 @@ namespace EJ5_test
 
 
             us1.Codigo = "123";
-            us1.CorreoElectronico = "Taca@hotmail.com";
+            us1.CorreoElectronico = "Baca@hotmail.com";
             us1.NombreCompleto = "Toriyama Akatalamoto";
 
             us2.Codigo = "124";
@@ -162,13 +162,29 @@ namespace EJ5_test
             repo.Agregar(us1);
             repo.Agregar(us3);
 
-            IList<Usuario> obtenido = repo.ObtenerOrdenadosPor(new OrdenarPorNombreDesc());
+            IList<Usuario> obtenidoDesc = repo.ObtenerOrdenadosPor(new OrdenarPorNombreDesc());
 
-            IList<Usuario> esperado = new List<Usuario> {us3,us2,us1};
+            IList<Usuario> esperadoDesc = new List<Usuario> {us3,us2,us1};
 
-            Assert.IsTrue(obtenido[0].Codigo.Equals(esperado[0].Codigo));
-            Assert.IsTrue(obtenido[1].Codigo.Equals(esperado[1].Codigo));
-            Assert.IsTrue(obtenido[2].Codigo.Equals(esperado[2].Codigo));
+            Assert.IsTrue(obtenidoDesc[0].Equals(esperadoDesc[0]));
+            Assert.IsTrue(obtenidoDesc[1].Equals(esperadoDesc[1]));
+            Assert.IsTrue(obtenidoDesc[2].Equals(esperadoDesc[2]));
+
+            IList<Usuario> obtenidoAsc = repo.ObtenerOrdenadosPor(new OrdenarPorNombreAsc());
+
+            IList<Usuario> esperadoAsc = new List<Usuario> { us1, us2, us3 };
+
+            Assert.IsTrue(obtenidoAsc[0].Equals(esperadoAsc[0]));
+            Assert.IsTrue(obtenidoAsc[1].Equals(esperadoAsc[1]));
+            Assert.IsTrue(obtenidoAsc[2].Equals(esperadoAsc[2]));
+
+            IList<Usuario> obtenidoCorreoDesc = repo.ObtenerOrdenadosPor(new OrdenarPorCorreoElectronicoDesc());
+
+            IList<Usuario> esperadoCorreoDesc = new List<Usuario> { us1, us3, us2 };
+
+            Assert.IsTrue(obtenidoCorreoDesc[0].Equals(esperadoCorreoDesc[0]));
+            Assert.IsTrue(obtenidoCorreoDesc[1].Equals(esperadoCorreoDesc[1]));
+            Assert.IsTrue(obtenidoCorreoDesc[2].Equals(esperadoCorreoDesc[2]));
 
 
         }
