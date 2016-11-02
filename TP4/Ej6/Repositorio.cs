@@ -44,6 +44,25 @@ namespace EJ6
         {
             return iUsuarios.OrderBy( unUsuario => unUsuario ,pComparador).ToList();
         }
+
+        public IList<Usuario> ObtenerPorAproximacion(string pNombreCompleto)
+        {
+            List<Usuario> listaAprox = new List<Usuario> { };
+
+            IEnumerator<Usuario> enumerador = iUsuarios.GetEnumerator();
+
+            while (enumerador.MoveNext() )
+            {
+                if (enumerador.Current.NombreCompleto.StartsWith(pNombreCompleto))
+                {
+                    listaAprox.Add(enumerador.Current);
+                }
+            }
+
+            return listaAprox;
+
+        }
+
     }
 
 

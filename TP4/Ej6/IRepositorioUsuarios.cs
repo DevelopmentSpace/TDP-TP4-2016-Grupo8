@@ -14,5 +14,6 @@ namespace EJ6
         IList<Usuario> ObtenerTodos();
         Usuario ObtenerPorCodigo(string pCodigo);
         IList<Usuario> ObtenerOrdenadosPor(IComparer<Usuario> pComparador);
+        IList<Usuario> ObtenerPorAproximacion(string pNombreCompleto);
     }
 }
