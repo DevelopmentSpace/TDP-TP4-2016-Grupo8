@@ -24,6 +24,18 @@ namespace EJ6
             set { iCorreoElectronico = value; }
         }
 
+        public Usuario Copy()
+        {
+           Usuario us = new Usuario();
+
+           us.Codigo = this.Codigo;
+           us.CorreoElectronico = this.CorreoElectronico;
+           us.NombreCompleto = this.NombreCompleto;
+
+            return us;
+        }
+
+
         public int CompareTo(Usuario other)
         {
             return String.Compare(this.iCodigo, other.Codigo);

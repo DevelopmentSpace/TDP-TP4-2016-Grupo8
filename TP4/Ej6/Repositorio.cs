@@ -55,7 +55,7 @@ namespace EJ6
             {
                 if (enumerador.Current.NombreCompleto.StartsWith(pNombreCompleto))
                 {
-                    listaAprox.Add(enumerador.Current);
+                    listaAprox.Add(enumerador.Current.Copy());
                 }
             }
 
