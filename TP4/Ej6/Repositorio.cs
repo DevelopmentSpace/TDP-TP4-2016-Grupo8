@@ -50,7 +50,7 @@ namespace EJ6
             List<Usuario> listaAprox = new List<Usuario> { };
 
             IEnumerator<Usuario> enumerador = iUsuarios.GetEnumerator();
-
+            
             while (enumerador.MoveNext() )
             {
                 if (enumerador.Current.NombreCompleto.StartsWith(pNombreCompleto))
