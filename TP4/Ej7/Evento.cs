@@ -14,8 +14,13 @@ namespace Ej7
         private TimeSpan iDuracion;
         private FrecuenciaEvento iFrecuencia;
 
-        public Evento(string pTitulo,DateTime pFechaComienzo, TimeSpan pDuracion, FrecuenciaEvento pFrecuencia)
+        public Evento(string pTitulo, DateTime pFechaComienzo, TimeSpan pDuracion, FrecuenciaEvento pFrecuencia)
         {
+            if (pFechaComienzo < DateTime.Today)
+            {
+                throw new ArgumentOutOfRangeException("ErrorFechaActualMayorQueFechaComienzo");
+            }
+
             iCodigo = 0;
             iTitulo = pTitulo;
             iFechaComienzo = pFechaComienzo;

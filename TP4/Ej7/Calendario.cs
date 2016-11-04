@@ -41,6 +41,11 @@ namespace Ej7
 
         public IList<Evento> ObtenerPorCriterio(DateTime pFechaComienzo, DateTime pFechaFin)
         {
+            if (pFechaComienzo > pFechaFin)
+            {
+                throw new ArgumentOutOfRangeException("ErrorFechaComienzoMayorQueFechaFin");
+            }
+
             List<Evento> listaCriterio = new List<Evento> { };
 
             IEnumerator<Evento> enumerador = iEventos.GetEnumerator();
