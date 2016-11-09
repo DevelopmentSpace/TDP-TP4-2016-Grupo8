@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ej7
 {
-    enum FrecuenciaEvento
+    public enum FrecuenciaEvento
     {
         unico,
         semana,

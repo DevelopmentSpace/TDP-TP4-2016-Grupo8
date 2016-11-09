@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace Ej7
 {
-    class Agenda
+    public class Agenda
     {
         private IList<Calendario> iCalendarios;
+
+        public Agenda()
+        {
+            iCalendarios = new List<Calendario> { };
+        }
 
         public void Agregar(Calendario pCalendario)
         {

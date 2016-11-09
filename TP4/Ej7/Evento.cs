@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ej7
 {
-    class Evento
+    public class Evento
     {
         private int iCodigo;
         private string iTitulo;

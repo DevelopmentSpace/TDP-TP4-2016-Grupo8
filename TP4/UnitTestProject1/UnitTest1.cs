@@ -10,7 +10,15 @@ namespace UnitTestProject1
         [TestMethod]
         public void AgregarEvento()
         {
-            Calendario
+            Calendario calendario = new Calendario("Carreras verano", new DateTime(1998, 6, 20));
+            Evento evento1 = new Evento("Carrera1", new DateTime(1998, 11, 9), new TimeSpan(4, 30, 0), FrecuenciaEvento.unico);
+
+            calendario.Agregar(evento1);
+
+            Evento obtenido = calendario.ObtenerEventos()[0];
+            Evento esperado = evento1;
+
+            Assert.IsTrue(esperado.Equals(esperado));
         }
 
     }

@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 
 namespace Ej7
 {
-    class Calendario
+    public class Calendario
     {
         private string iTitulo;
         private DateTime iFechaCreacion;
         private IList<Evento> iEventos;
+
+        public Calendario(string pTitulo, DateTime pFechaCreacion)
+        {
+            iTitulo = pTitulo;
+            iFechaCreacion = pFechaCreacion;
+            iEventos = new List<Evento> { };
+        }
 
         public string Titulo { get { return iTitulo; } }
 
@@ -52,7 +59,7 @@ namespace Ej7
 
             while (enumerador.MoveNext())
             {
-                // ACA HABRIA UN CASE con los enumerables.
+
                 if (enumerador.Current.SeRealiza(pFechaComienzo,pFechaFin))
                 {
                     listaCriterio.Add(enumerador.Current);
