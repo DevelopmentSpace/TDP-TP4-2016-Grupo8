@@ -52,6 +52,7 @@ namespace Ej7
 
             while (enumerador.MoveNext())
             {
+                // ACA HABRIA UN CASE con los enumerables.
                 if (pFechaComienzo.Ticks < enumerador.Current.FechaComienzo.Ticks && enumerador.Current.FechaComienzo.Ticks < pFechaFin.Ticks)
                 {
                     listaCriterio.Add(enumerador.Current);
