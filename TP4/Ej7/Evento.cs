@@ -18,7 +18,7 @@ namespace Ej7
         {
             if (pFechaComienzo < DateTime.Today)
             {
-                throw new ArgumentOutOfRangeException("ErrorFechaActualMayorQueFechaComienzo");
+                throw new ArgumentOutOfRangeException("ErrorFechaActualMenorFechaComienzo");
             }
 
             iCodigo = 0;
