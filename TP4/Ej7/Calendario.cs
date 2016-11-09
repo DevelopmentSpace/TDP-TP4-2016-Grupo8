@@ -39,7 +39,7 @@ namespace Ej7
             return iEventos;
         }
 
-        public IList<Evento> ObtenerPorCriterio(DateTime pFechaComienzo, DateTime pFechaFin)
+        public IList<Evento> ObtenerEntreFechas(DateTime pFechaComienzo, DateTime pFechaFin)
         {
             if (pFechaComienzo > pFechaFin)
             {
@@ -53,7 +53,7 @@ namespace Ej7
             while (enumerador.MoveNext())
             {
                 // ACA HABRIA UN CASE con los enumerables.
-                if (pFechaComienzo.Ticks < enumerador.Current.FechaComienzo.Ticks && enumerador.Current.FechaComienzo.Ticks < pFechaFin.Ticks)
+                if (enumerador.Current.SeRealiza(pFechaComienzo,pFechaFin))
                 {
                     listaCriterio.Add(enumerador.Current);
                 }
