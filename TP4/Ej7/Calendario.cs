@@ -46,6 +46,16 @@ namespace Ej7
             return iEventos;
         }
 
+        public Evento ObtenerPorCodigo(int pCodigo)
+        {
+            Evento aux = new Evento(pCodigo, "", new DateTime(), new TimeSpan(), FrecuenciaEvento.unico);
+
+            if (iEventos.Contains(aux))
+                return iEventos.ElementAt(iEventos.IndexOf(aux));
+            else
+                throw new KeyNotFoundException();
+        }
+
         public IList<Evento> ObtenerEntreFechas(DateTime pFechaComienzo, DateTime pFechaFin)
         {
             if (pFechaComienzo > pFechaFin)

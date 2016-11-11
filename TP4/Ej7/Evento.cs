@@ -14,14 +14,10 @@ namespace Ej7
         private TimeSpan iDuracion;
         private FrecuenciaEvento iFrecuencia;
 
-        public Evento(string pTitulo, DateTime pFechaComienzo, TimeSpan pDuracion, FrecuenciaEvento pFrecuencia)
+        public Evento(int pCodigo,string pTitulo, DateTime pFechaComienzo, TimeSpan pDuracion, FrecuenciaEvento pFrecuencia)
         {
-            if (pFechaComienzo < DateTime.Today)
-            {
-                throw new ArgumentOutOfRangeException("ErrorFechaActualMenorFechaComienzo");
-            }
 
-            iCodigo = 0;
+            iCodigo = pCodigo;
             iTitulo = pTitulo;
             iFechaComienzo = pFechaComienzo;
             iDuracion = pDuracion;
