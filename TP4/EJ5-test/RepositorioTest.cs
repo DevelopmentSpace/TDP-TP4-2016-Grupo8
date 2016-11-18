@@ -10,7 +10,7 @@ namespace EJ5_test
     {
 
         [TestMethod]
-        public void Agregar()
+        public void Ej5RepositorioAgregar()
         {
             Usuario us1 = new Usuario();
             Usuario us2 = new Usuario();
@@ -36,7 +36,7 @@ namespace EJ5_test
         }
 
         [TestMethod]
-        public void Actualizar()
+        public void Ej5RepositorioActualizar()
         {
             Usuario us1 = new Usuario();
             Usuario us2 = new Usuario();
@@ -61,7 +61,7 @@ namespace EJ5_test
         }
 
         [TestMethod]
-        public void ObtenerPorCodigo()
+        public void Ej5RepositorioObtenerPorCodigo()
         {
             Usuario us1 = new Usuario();
 
@@ -80,7 +80,7 @@ namespace EJ5_test
         }
 
         [TestMethod]
-        public void ObtenerTodos()
+        public void Ej5RepositorioObtenerTodos()
         {
             Usuario us1 = new Usuario();
             Usuario us2 = new Usuario();
@@ -97,48 +97,35 @@ namespace EJ5_test
             repo.Agregar(us1);
             repo.Agregar(us2);
 
-            IList<Usuario> alumnos = new List<Usuario> { };
+            List<Usuario> esperado = new List<Usuario> { us1, us2 };
+            List<Usuario> obtenido = new List<Usuario>(repo.ObtenerTodos());
 
-            alumnos.Add(us1);
-            alumnos.Add(us2);
-
-            CollectionAssert.Equals(repo.ObtenerTodos(), alumnos);
-
+            CollectionAssert.AreEquivalent(esperado, obtenido);
 
         }
 
         [TestMethod]
-        public void Eliminar()
+        [ExpectedException(typeof(Exception), AllowDerivedTypes = true)]
+        public void Ej6RepositorioEliminar()
         {
             Usuario us1 = new Usuario();
-            Usuario us2 = new Usuario();
             IRepositorioUsuarios repo1 = new Repositorio();
-            IRepositorioUsuarios repo2 = new Repositorio();
 
 
             us1.Codigo = "123";
             us1.CorreoElectronico = "Taca@hotmail.com";
             us1.NombreCompleto = "Toriyama Akatalamoto";
 
-            us2.Codigo = "124";
-            us2.CorreoElectronico = "TacaTaca@hotmail.com";
-            us2.NombreCompleto = "Chamaco Chamaquin";
-
             repo1.Agregar(us1);
-            repo1.Agregar(us2);
             repo1.Eliminar("124");
 
-            repo2.Agregar(us1);
+            repo1.ObtenerPorCodigo("124");
 
-            //Repo 1 obtenido, Repo 2 esperado.
-
-            CollectionAssert.Equals(repo1.ObtenerTodos(),repo2.ObtenerTodos());
-
-
+            Assert.Fail();
         }
 
         [TestMethod]
-        public void OrdenarPor()
+        public void Ej5RepositorioOrdenarPor()
         {
             Usuario us1 = new Usuario();
             Usuario us2 = new Usuario();
@@ -186,10 +173,7 @@ namespace EJ5_test
             Assert.IsTrue(obtenidoCorreoDesc[1].Equals(esperadoCorreoDesc[1]));
             Assert.IsTrue(obtenidoCorreoDesc[2].Equals(esperadoCorreoDesc[2]));
 
-
         }
-
-
 
 
     }

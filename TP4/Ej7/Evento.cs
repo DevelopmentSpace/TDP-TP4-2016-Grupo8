@@ -16,6 +16,8 @@ namespace Ej7
 
         public Evento(int pCodigo,string pTitulo, DateTime pFechaComienzo, TimeSpan pDuracion, FrecuenciaEvento pFrecuencia)
         {
+            if (pTitulo.Equals(""))
+                throw new ArgumentException("Titulo no puede ser vacio");
 
             iCodigo = pCodigo;
             iTitulo = pTitulo;
@@ -24,7 +26,31 @@ namespace Ej7
             iFrecuencia = pFrecuencia;
         }
 
-        public DateTime FechaComienzo { get { return iFechaComienzo; } }
+        public int Codigo
+        {
+            get { return iCodigo; }
+        }
+
+        public string Titulo
+        {
+            get { return iTitulo; }
+        }
+
+        public DateTime FechaComienzo
+        {
+            get { return iFechaComienzo; }
+        }
+
+        public TimeSpan Duracion
+        {
+            get { return iDuracion; }
+        }
+
+        public FrecuenciaEvento Frecuencia
+        {
+            get { return iFrecuencia; }
+        }
+
 
         public bool SeRealiza(DateTime pFechaComienzo,DateTime pFechaFin)
         {

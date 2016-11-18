@@ -42,7 +42,7 @@ namespace Ej7
 
         public Calendario ObtenerPorCodigo(int pCodigo)
         {
-            Calendario aux = new Calendario(pCodigo, "",new DateTime());
+            Calendario aux = new Calendario(pCodigo, "a",new DateTime());
 
             if (iCalendarios.Contains(aux))
                 return iCalendarios.ElementAt(iCalendarios.IndexOf(aux));

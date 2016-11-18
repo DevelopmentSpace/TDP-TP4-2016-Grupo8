@@ -15,15 +15,29 @@ namespace Ej7
 
         public Calendario(int pCodigo, string pTitulo, DateTime pFechaCreacion)
         {
+            if (pTitulo.Equals(""))
+                throw new ArgumentException("Titulo no puede ser vacio");
+
             iCodigo = pCodigo;
             iTitulo = pTitulo;
             iFechaCreacion = pFechaCreacion;
             iEventos = new List<Evento> { };
         }
 
-        public string Titulo { get { return iTitulo; } }
+        public int Codigo
+        {
+            get { return iCodigo; }
+        }
 
-        public DateTime FechaCreacion { get { return iFechaCreacion; } }
+        public string Titulo
+        {
+            get { return iTitulo; }
+        }
+
+        public DateTime FechaCreacion
+        {
+            get { return iFechaCreacion; }
+        }
 
 
         public void Agregar(Evento pEvento)
@@ -55,7 +69,7 @@ namespace Ej7
 
         public Evento ObtenerPorCodigo(int pCodigo)
         {
-            Evento aux = new Evento(pCodigo, "", new DateTime(), new TimeSpan(), FrecuenciaEvento.unico);
+            Evento aux = new Evento(pCodigo, "a", new DateTime(), new TimeSpan(), FrecuenciaEvento.unico);
 
             if (iEventos.Contains(aux))
                 return iEventos.ElementAt(iEventos.IndexOf(aux));

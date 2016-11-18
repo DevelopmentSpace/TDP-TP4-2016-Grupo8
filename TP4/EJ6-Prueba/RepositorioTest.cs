@@ -10,7 +10,7 @@ namespace EJ6_Prueba
     {
 
         [TestMethod]
-        public void Agregar()
+        public void Ej6RepositorioAgregar()
         {
             Usuario us1 = new Usuario();
             Usuario us2 = new Usuario();
@@ -36,7 +36,7 @@ namespace EJ6_Prueba
         }
 
         [TestMethod]
-        public void Actualizar()
+        public void Ej6RepositorioActualizar()
         {
             Usuario us1 = new Usuario();
             Usuario us2 = new Usuario();
@@ -61,7 +61,7 @@ namespace EJ6_Prueba
         }
 
         [TestMethod]
-        public void ObtenerPorCodigo()
+        public void Ej6RepositorioObtenerPorCodigo()
         {
             Usuario us1 = new Usuario();
 
@@ -80,7 +80,7 @@ namespace EJ6_Prueba
         }
 
         [TestMethod]
-        public void ObtenerTodos()
+        public void Ej6RepositorioObtenerTodos()
         {
             Usuario us1 = new Usuario();
             Usuario us2 = new Usuario();
@@ -97,48 +97,35 @@ namespace EJ6_Prueba
             repo.Agregar(us1);
             repo.Agregar(us2);
 
-            IList<Usuario> alumnos = new List<Usuario> { };
+            List<Usuario> esperado = new List<Usuario> {us1,us2};
+            List<Usuario> obtenido = new List<Usuario>(repo.ObtenerTodos());
 
-            alumnos.Add(us1);
-            alumnos.Add(us2);
-
-            CollectionAssert.Equals(repo.ObtenerTodos(), alumnos);
-
+            CollectionAssert.AreEquivalent(esperado,obtenido);
 
         }
 
         [TestMethod]
-        public void Eliminar()
+        [ExpectedException(typeof(Exception),AllowDerivedTypes =true)]
+        public void Ej6RepositorioEliminar()
         {
             Usuario us1 = new Usuario();
-            Usuario us2 = new Usuario();
             IRepositorioUsuarios repo1 = new Repositorio();
-            IRepositorioUsuarios repo2 = new Repositorio();
 
 
             us1.Codigo = "123";
             us1.CorreoElectronico = "Taca@hotmail.com";
             us1.NombreCompleto = "Toriyama Akatalamoto";
 
-            us2.Codigo = "124";
-            us2.CorreoElectronico = "TacaTaca@hotmail.com";
-            us2.NombreCompleto = "Chamaco Chamaquin";
-
             repo1.Agregar(us1);
-            repo1.Agregar(us2);
             repo1.Eliminar("124");
 
-            repo2.Agregar(us1);
+            repo1.ObtenerPorCodigo("124");
 
-            //Repo 1 obtenido, Repo 2 esperado.
-
-            CollectionAssert.Equals(repo1.ObtenerTodos(), repo2.ObtenerTodos());
-
-
+            Assert.Fail();
         }
 
         [TestMethod]
-        public void OrdenarPor()
+        public void Ej6RepositorioOrdenarPor()
         {
             Usuario us1 = new Usuario();
             Usuario us2 = new Usuario();
@@ -162,34 +149,22 @@ namespace EJ6_Prueba
             repo.Agregar(us1);
             repo.Agregar(us3);
 
-            IList<Usuario> obtenidoDesc = repo.ObtenerOrdenadosPor(new OrdenarPorNombreDesc());
+            List<Usuario> obtenido = new List<Usuario>(repo.ObtenerOrdenadosPor(new OrdenarPorNombreDesc()));
+            List<Usuario> esperado = new List<Usuario> { us3, us2, us1 };
+            CollectionAssert.AreEqual(esperado, obtenido);
 
-            IList<Usuario> esperadoDesc = new List<Usuario> { us3, us2, us1 };
+            obtenido = new List<Usuario>(repo.ObtenerOrdenadosPor(new OrdenarPorNombreAsc()));
+            esperado = new List<Usuario> { us1, us2, us3 };
+            CollectionAssert.AreEqual(esperado, obtenido);
 
-            Assert.IsTrue(obtenidoDesc[0].Equals(esperadoDesc[0]));
-            Assert.IsTrue(obtenidoDesc[1].Equals(esperadoDesc[1]));
-            Assert.IsTrue(obtenidoDesc[2].Equals(esperadoDesc[2]));
-
-            IList<Usuario> obtenidoAsc = repo.ObtenerOrdenadosPor(new OrdenarPorNombreAsc());
-
-            IList<Usuario> esperadoAsc = new List<Usuario> { us1, us2, us3 };
-
-            Assert.IsTrue(obtenidoAsc[0].Equals(esperadoAsc[0]));
-            Assert.IsTrue(obtenidoAsc[1].Equals(esperadoAsc[1]));
-            Assert.IsTrue(obtenidoAsc[2].Equals(esperadoAsc[2]));
-
-            IList<Usuario> obtenidoCorreoDesc = repo.ObtenerOrdenadosPor(new OrdenarPorCorreoElectronicoDesc());
-
-            IList<Usuario> esperadoCorreoDesc = new List<Usuario> { us1, us3, us2 };
-
-            Assert.IsTrue(obtenidoCorreoDesc[0].Equals(esperadoCorreoDesc[0]));
-            Assert.IsTrue(obtenidoCorreoDesc[1].Equals(esperadoCorreoDesc[1]));
-            Assert.IsTrue(obtenidoCorreoDesc[2].Equals(esperadoCorreoDesc[2]));
+            obtenido = new List<Usuario>(repo.ObtenerOrdenadosPor(new OrdenarPorCorreoElectronicoDesc()));
+            esperado = new List<Usuario> { us1, us3, us2 };
+            CollectionAssert.AreEqual(esperado, obtenido);
 
 
         }
         [TestMethod]
-        public void ObtenerPorAprox()
+        public void Ej6RepositorioObtenerPorAprox()
         {
             Usuario us1 = new Usuario();
             Usuario us2 = new Usuario();
@@ -213,11 +188,11 @@ namespace EJ6_Prueba
             repo.Agregar(us1);
             repo.Agregar(us3);
 
-            IList<Usuario> actual = repo.ObtenerPorAproximacion("Ti");
+            List<Usuario> obtenido = new List<Usuario>(repo.ObtenerPorAproximacion("Ti"));
 
-            IList<Usuario> esperado = new List<Usuario>() { us1,us3 };
+            List<Usuario> esperado = new List<Usuario>() { us1,us3 };
 
-            CollectionAssert.Equals(esperado,actual);
+            CollectionAssert.AreEquivalent(esperado,obtenido);
 
         }
     }
