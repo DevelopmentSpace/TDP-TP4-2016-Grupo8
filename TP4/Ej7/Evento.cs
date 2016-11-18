@@ -42,20 +42,20 @@ namespace Ej7
                 case FrecuenciaEvento.semana:
                     {
 
-                        DateTime fechaAux = new DateTime(iFechaComienzo.Day, pFechaComienzo.Month, pFechaComienzo.Year);
+                        DateTime fechaAux = pFechaComienzo;
 
-                        while (fechaAux.Year <= pFechaFin.Year && !(fechaAux >= pFechaComienzo && fechaAux <= pFechaFin))
-                            fechaAux = fechaAux.AddDays(7);
+                        while (fechaAux < pFechaFin && !(fechaAux.DayOfWeek == iFechaComienzo.DayOfWeek))
+                            fechaAux = fechaAux.AddDays(1);
 
-                        return (fechaAux >= pFechaComienzo && fechaAux <= pFechaFin);
+                        return (fechaAux.DayOfWeek == iFechaComienzo.DayOfWeek);
                     }
 
                 case FrecuenciaEvento.mes:
                     {
 
-                        DateTime fechaAux = new DateTime(iFechaComienzo.Day, pFechaComienzo.Month, pFechaComienzo.Year);
+                        DateTime fechaAux = new DateTime(pFechaComienzo.Year, pFechaComienzo.Month, iFechaComienzo.Day);
 
-                        while (fechaAux.Year <= pFechaFin.Year && !(fechaAux >= pFechaComienzo && fechaAux <= pFechaFin))
+                        while (fechaAux <= pFechaFin && !(fechaAux >= pFechaComienzo && fechaAux <= pFechaFin))
                             fechaAux = fechaAux.AddMonths(1);
 
                         return (fechaAux >= pFechaComienzo && fechaAux <= pFechaFin);
@@ -64,9 +64,9 @@ namespace Ej7
                 case FrecuenciaEvento.anio:
                     {
 
-                        DateTime fechaAux = new DateTime(iFechaComienzo.Day, iFechaComienzo.Month, pFechaComienzo.Year);
+                        DateTime fechaAux = new DateTime(pFechaComienzo.Year, iFechaComienzo.Month, iFechaComienzo.Day);
 
-                        while (fechaAux.Year <= pFechaFin.Year && !(fechaAux >= pFechaComienzo && fechaAux <= pFechaFin))
+                        while (fechaAux <= pFechaFin && !(fechaAux >= pFechaComienzo && fechaAux <= pFechaFin))
                             fechaAux = fechaAux.AddYears(1);
 
                         return (fechaAux >= pFechaComienzo && fechaAux <= pFechaFin);
