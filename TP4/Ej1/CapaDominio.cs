@@ -10,11 +10,18 @@ namespace Ej1
     {
         CapaPersistencia iCapaPersistencia;
 
+        /// <summary>
+        /// Crea una instancia de CapaDominio
+        /// </summary>
+        /// <param name="pCapaPersistencia">CapaPersistencia</param>
         public CapaDominio(CapaPersistencia pCapaPersistencia)
         {
             iCapaPersistencia = pCapaPersistencia;
         }
 
+        /// <summary>
+        /// Invoca el mensaje ejecutar() de la CapaPersistencia
+        /// </summary>
         public void Ejecutar()
         {
             iCapaPersistencia.Ejecutar();

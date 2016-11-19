@@ -8,7 +8,9 @@ namespace Ej1
 {
     class CapaPersistencia
     {
-
+        /// <summary>
+        /// Lanza una exepcion de tipo ErrorPuntualExeption
+        /// </summary>
         public void Ejecutar()
         {
             ErrorPuntualException e = new ErrorPuntualException("ErrorPuntual", DateTime.Now);

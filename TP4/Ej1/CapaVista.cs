@@ -10,11 +10,18 @@ namespace Ej1
     {
         CapaControlador iCapaControlador;
 
+        /// <summary>
+        /// Crea una instancia de CapaVista
+        /// </summary>
+        /// <param name="pCapaControlador">CapaControlador</param>
         public CapaVista(CapaControlador pCapaControlador)
         {
             iCapaControlador = pCapaControlador;
         }
 
+        /// <summary>
+        /// Invoca el mensaje ejecutar() de la CapaControlador
+        /// </summary>
         public void Ejecutar()
         {
             try
@@ -23,7 +30,7 @@ namespace Ej1
             }
             catch (CapaAplicacionException e)
             {
-                
+                //Muestra datos de la exepcion
                 Console.WriteLine("Fecha:");
                 Console.WriteLine(" " + ((DateTime)e.Data["fecha"]).ToString());
                 Console.WriteLine();

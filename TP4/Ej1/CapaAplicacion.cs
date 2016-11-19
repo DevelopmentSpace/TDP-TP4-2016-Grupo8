@@ -10,11 +10,18 @@ namespace Ej1
     {
         CapaDominio iCapaDominio;
 
+        /// <summary>
+        /// Crea una instancia de CapaAplicacion
+        /// </summary>
+        /// <param name="pCapaDominio">CapaDominio</param>
         public CapaAplicacion(CapaDominio pCapaDominio)
         {
             iCapaDominio = pCapaDominio;
         }
 
+        /// <summary>
+        /// invoca el mensaje Ejecutar() de la CapaDominio
+        /// </summary>
         public void Ejecutar()
         {
             try
@@ -23,6 +30,7 @@ namespace Ej1
             }
             catch (ErrorPuntualException e)
             {
+                //Lanza una nueva exepcion de tipo CapaAplicaiconExcepcion
                 CapaAplicacionException exp = new CapaAplicacionException("ErrorPersistencia",e);
                 
                 exp.Data.Add("fecha", e.Data["fecha"]); 

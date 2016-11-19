@@ -19,7 +19,6 @@ namespace Ej1
             cv.Ejecutar();
             Console.ReadKey();
 
-
         }
     }
 }
