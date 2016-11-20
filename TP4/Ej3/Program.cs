@@ -13,24 +13,26 @@ namespace Ej3
         {
             Archivo arch=null;
 
+            Console.WriteLine("Ingrese la ruta al archivo: ");
+
             string ruta = Console.ReadLine();
             try
             {
                 arch = new Archivo(ruta);
             }
-            catch (ArgumentNullException)
+            catch (ArgumentNullException) //Ruta vacia
             {
                 Console.WriteLine("Debe ingresar una ruta.");
                 Console.ReadKey();
                 return;
             }
-            catch (ArgumentException)
+            catch (ArgumentException) //Ruta no valida
             {
                 Console.WriteLine("La ruta ingresada no es valida.");
                 Console.ReadKey();
                 return;
             }
-            catch (FileNotFoundException)
+            catch (FileNotFoundException) //Archivo Inexistente
             {
                 Console.WriteLine("El archivo no existe.");
                 Console.ReadKey();
@@ -38,16 +40,28 @@ namespace Ej3
             }
             catch(Exception)
             {
-                Console.Write("Se produjo un error inesperado.");
+                Console.Write("Se produjo un error desconocido.");
                 Console.ReadKey();
                 return;
             }
 
-            Console.Clear();
-            Console.WriteLine(arch.LeerArchivo());
+
+            Console.WriteLine();
+            Console.WriteLine("Presione una tecla para mostrar el contenido del archivo");
             Console.ReadKey();
+            Console.WriteLine();
 
-
+            try
+            {
+                Console.WriteLine(arch.LeerArchivo());
+            }
+            catch
+            {
+                Console.Write("Se produjo un error al leer el archivo");
+                Console.ReadKey();
+                return;
+            }          
+            Console.ReadKey();
 
 
         }

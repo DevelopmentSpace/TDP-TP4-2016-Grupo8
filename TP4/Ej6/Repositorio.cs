@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace EJ6
 {
+    /// <summary>
+    /// Implementacion de IRepositorioUsuarios usando ListaDeUsuario
+    /// </summary>
     public class Repositorio : IRepositorioUsuarios
     {
         IList<Usuario> iUsuarios = new List<Usuario> { };
@@ -45,6 +48,7 @@ namespace EJ6
             return iUsuarios.OrderBy( unUsuario => unUsuario ,pComparador).ToList();
         }
 
+
         public IList<Usuario> ObtenerPorAproximacion(string pNombreCompleto)
         {
             List<Usuario> listaAprox = new List<Usuario> { };
@@ -55,7 +59,7 @@ namespace EJ6
             {
                 if (enumerador.Current.NombreCompleto.StartsWith(pNombreCompleto))
                 {
-                    listaAprox.Add(enumerador.Current.Copy());
+                    listaAprox.Add((Usuario)enumerador.Current.Clone());
                 }
             }
 

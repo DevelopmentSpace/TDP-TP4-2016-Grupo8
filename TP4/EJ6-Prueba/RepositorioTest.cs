@@ -163,6 +163,7 @@ namespace EJ6_Prueba
 
 
         }
+
         [TestMethod]
         public void Ej6RepositorioObtenerPorAprox()
         {
@@ -194,6 +195,29 @@ namespace EJ6_Prueba
 
             CollectionAssert.AreEquivalent(esperado,obtenido);
 
+        }
+
+        [TestMethod]
+        public void Ej6RepositorioObtenerPorAproxDefensiveCopy()
+        {
+            Usuario us1 = new Usuario();
+            IRepositorioUsuarios repo = new Repositorio();
+
+            us1.Codigo = "123";
+            us1.CorreoElectronico = "Baca@hotmail.com";
+            us1.NombreCompleto = "Tiriyama Akatalamoto";
+
+            repo.Agregar(us1);
+
+            IEnumerator<Usuario> enumerator= repo.ObtenerPorAproximacion("Ti").GetEnumerator();
+            enumerator.MoveNext();
+            Usuario obtenido = enumerator.Current;
+
+            us1.Codigo = "123";
+            us1.CorreoElectronico = "OTROMAIL@hotmail.com";
+            us1.NombreCompleto = "OTRONOMBRE";
+
+            Assert.AreNotSame(us1, obtenido);
         }
     }
 }

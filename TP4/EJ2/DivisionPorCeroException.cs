@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace EJ2
 {
-    class DivisionPorCeroException : Exception
+    public class DivisionPorCeroException : Exception
     {
-
+        /// <summary>
+        /// Crea una instancia de DivisionPorCeroException
+        /// </summary>
+        /// <param name="pMensaje">Mensaje</param>
         public DivisionPorCeroException(string pMensaje) : base(pMensaje)
         {
         }
