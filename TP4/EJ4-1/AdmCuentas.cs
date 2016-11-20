@@ -20,7 +20,6 @@ namespace EJ2
         /// Transfiere desde la cuenta corriente a una caja ahorro el saldo especificado.
         /// </summary>
         /// <param name="pSaldo">Saldo que se desea transferir</param>
-        /// <returns>(True) Si se  hizo la transferencia, (false) si no se pudo concretar la transferencia</returns>
         public void TransferirACajaAhorro(double pSaldo)
         {
             if (ExisteCajaAhorro() && ExisteCuentaCorriente())
@@ -39,7 +38,6 @@ namespace EJ2
         /// Transfiere desde la caja ahorro a una cuenta corriente el saldo especificado.
         /// </summary>
         /// <param name="pSaldo">Saldo que se desea transferir</param>
-        /// <returns>(True) Si se  hizo la transferencia, (false) si no se pudo concretar la transferencia</returns>
         public void TransferirACuentaCorriente(double pSaldo)
         {
             if (ExisteCajaAhorro() && ExisteCuentaCorriente())
