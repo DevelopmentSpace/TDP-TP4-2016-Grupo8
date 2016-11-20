@@ -17,11 +17,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EJ5-test", "EJ5-test\EJ5-te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ej6", "Ej6\Ej6.csproj", "{4144160F-4E24-44E9-86C6-EE5F34CFF7AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EJ6-Prueba", "EJ6-Prueba\EJ6-Prueba.csproj", "{0B4F5E5F-8455-423F-894B-23DB56883638}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EJ6-test", "EJ6-Prueba\EJ6-test.csproj", "{0B4F5E5F-8455-423F-894B-23DB56883638}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ej7", "Ej7\Ej7.csproj", "{74A0EDEF-3DC0-425A-8FEA-CADCD6E6003F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ej7-Prueba", "UnitTestProject1\Ej7-Prueba.csproj", "{B02CB656-80B0-4205-9185-FC155EBC97C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ej2-test", "Ej2-test\Ej2-test.csproj", "{0225F604-AD06-40F9-9D2D-6E86B07117AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{B02CB656-80B0-4205-9185-FC155EBC97C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B02CB656-80B0-4205-9185-FC155EBC97C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B02CB656-80B0-4205-9185-FC155EBC97C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0225F604-AD06-40F9-9D2D-6E86B07117AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0225F604-AD06-40F9-9D2D-6E86B07117AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0225F604-AD06-40F9-9D2D-6E86B07117AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0225F604-AD06-40F9-9D2D-6E86B07117AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
