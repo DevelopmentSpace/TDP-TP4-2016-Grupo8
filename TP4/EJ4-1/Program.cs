@@ -93,7 +93,7 @@ namespace EJ2
                                 }
                                 catch (ArgumentNullException)
                                 {
-                                    Console.Write("No se puede ingresar un saldo nulo.");
+                                    Console.Write("Debe ingresar un saldo.");
                                 }
                                 catch (ArgumentException)
                                 {
@@ -103,7 +103,7 @@ namespace EJ2
                                 {
                                     Console.Write("El saldo es insuficiente.");
                                 }
-                                catch (InvalidOperationException)
+                                catch (InvalidOperationException) //Cuenta no existe
                                 {
                                     Console.Write("No existen la cuenta.");
                                 }
@@ -134,7 +134,7 @@ namespace EJ2
                                 {
                                     Console.Write("El saldo es insuficiente.");
                                 }
-                                catch (InvalidOperationException)
+                                catch (InvalidOperationException) //Cuenta no existe
                                 {
                                     Console.Write("No existen la cuenta.");
                                 }

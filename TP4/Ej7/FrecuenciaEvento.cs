@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Ej7
 {
+    /// <summary>
+    /// Representa la frecuencia de repeticion de un evento
+    /// </summary>
     public enum FrecuenciaEvento
     {
         unico,

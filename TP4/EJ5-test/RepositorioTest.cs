@@ -106,7 +106,7 @@ namespace EJ5_test
 
         [TestMethod]
         [ExpectedException(typeof(Exception), AllowDerivedTypes = true)]
-        public void Ej6RepositorioEliminar()
+        public void Ej5RepositorioEliminar()
         {
             Usuario us1 = new Usuario();
             IRepositorioUsuarios repo1 = new Repositorio();

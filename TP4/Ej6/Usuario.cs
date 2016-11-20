@@ -77,9 +77,13 @@ namespace EJ6
             return code;
         }
 
+        /// <summary>
+        /// Implemetacion del a interface IClonable, clona el objeto
+        /// </summary>
+        /// <returns>Copia del objeto</returns>
         public object Clone()
         {
-            return this.MemberwiseClone();
+            return this.MemberwiseClone(); //shallow copy
         }
 
     }

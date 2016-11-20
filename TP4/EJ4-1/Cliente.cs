@@ -17,7 +17,7 @@ namespace EJ2
         private TipoDocumento iTipoDocumento;
 
         /// <summary>
-        /// 
+        /// Constructor de cliente
         /// </summary>
         /// <param name="pTipoDocumento">Tipo de documento que es</param>
         /// <param name="pNroDocumento">Numero de documento del cliente</param>

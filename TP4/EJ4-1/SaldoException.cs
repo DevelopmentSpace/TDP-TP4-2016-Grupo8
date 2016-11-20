@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace EJ2
 {
+    /// <summary>
+    /// Excepcion que representa saldo insuficiente
+    /// </summary>
     class SaldoException : ApplicationException
     {
 

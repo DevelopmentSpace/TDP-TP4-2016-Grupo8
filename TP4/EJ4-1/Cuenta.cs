@@ -52,6 +52,8 @@ namespace EJ2
         /// Acredita saldo en una cuenta.
         /// </summary>
         /// <param name="pSaldo">Saldo a acreditar</param>
+        /// <exception cref="ArgumentException">pSaldo negativo</exception>
+        /// <exception cref="ArgumentNullException">pSaldo igual a 0</exception>
         public void AcreditarSaldo(double pSaldo)
         {
             if (pSaldo < 0)
@@ -66,7 +68,9 @@ namespace EJ2
         /// Debita saldo en una cuenta
         /// </summary>
         /// <param name="pSaldo">Saldo a debitar</param>
-        /// <returns>(true) si se puede debitar dicho saldo, (false) si no se puede debitar el saldo</returns>
+        /// <exception cref="ArgumentException">pSaldo negativo</exception>
+        /// <exception cref="ArgumentNullException">pSaldo igual a 0</exception>
+        /// <exception cref="SaldoException">Saldo insuficiente para realizar la operacion</exception>
         public void DebitarSaldo(double pSaldo)
         {
             if (pSaldo < 0)
